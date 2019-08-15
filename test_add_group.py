@@ -13,27 +13,27 @@ class test_add_group(unittest.TestCase):
     def open_page(self, wd):
         wd.get("http://localhost/addressbook/")
 
-    def login(self, wd):
+    def login(self, wd, username, password):
         wd.find_element_by_name("user").click()
         wd.find_element_by_name("user").clear()
-        wd.find_element_by_name("user").send_keys("admin")
+        wd.find_element_by_name("user").send_keys(username)
         wd.find_element_by_name("pass").click()
         wd.find_element_by_name("pass").clear()
-        wd.find_element_by_name("pass").send_keys("secret")
+        wd.find_element_by_name("pass").send_keys(password)
         wd.find_element_by_xpath("//input[@value='Login']").click()
 
-    def add_group(self, wd):
+    def add_group(self, wd, name, header, footer):
         wd.find_element_by_link_text("groups").click()
         wd.find_element_by_name("new").click()
         wd.find_element_by_name("group_name").click()
         wd.find_element_by_name("group_name").clear()
-        wd.find_element_by_name("group_name").send_keys("111")
+        wd.find_element_by_name("group_name").send_keys(name)
         wd.find_element_by_name("group_header").click()
         wd.find_element_by_name("group_header").clear()
-        wd.find_element_by_name("group_header").send_keys("222")
+        wd.find_element_by_name("group_header").send_keys(header)
         wd.find_element_by_name("group_footer").click()
         wd.find_element_by_name("group_footer").clear()
-        wd.find_element_by_name("group_footer").send_keys("333")
+        wd.find_element_by_name("group_footer").send_keys(footer)
         wd.find_element_by_name("submit").click()
         wd.find_element_by_link_text("group page").click()
 
@@ -43,8 +43,8 @@ class test_add_group(unittest.TestCase):
     def test_add_group(self):
         wd = self.wd
         self.open_page(wd)
-        self.login(wd)
-        self.add_group(wd)
+        self.login(wd, username="admin", password="secret")
+        self.add_group(wd, name="111", header="222", footer="333")
         self.logout(wd)
 
     def is_element_present(self, how, what):
