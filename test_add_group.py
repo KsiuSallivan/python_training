@@ -3,17 +3,17 @@
 from selenium import webdriver
 from selenium.common.exceptions import NoSuchElementException
 from selenium.common.exceptions import NoAlertPresentException
-import unittest, time, re
+import unittest
 
-
-class TestAddGroup(unittest.TestCase):
+class test_add_group(unittest.TestCase):
     def setUp(self):
         self.wd = webdriver.Firefox()
         self.wd.implicitly_wait(30)
 
-    def test_add_group(self):
-        wd = self.wd
+    def open_page(self, wd):
         wd.get("http://localhost/addressbook/")
+
+    def login(self, wd):
         wd.find_element_by_name("user").click()
         wd.find_element_by_name("user").clear()
         wd.find_element_by_name("user").send_keys("admin")
@@ -21,6 +21,8 @@ class TestAddGroup(unittest.TestCase):
         wd.find_element_by_name("pass").clear()
         wd.find_element_by_name("pass").send_keys("secret")
         wd.find_element_by_xpath("//input[@value='Login']").click()
+
+    def add_group(self, wd):
         wd.find_element_by_link_text("groups").click()
         wd.find_element_by_name("new").click()
         wd.find_element_by_name("group_name").click()
@@ -34,7 +36,16 @@ class TestAddGroup(unittest.TestCase):
         wd.find_element_by_name("group_footer").send_keys("333")
         wd.find_element_by_name("submit").click()
         wd.find_element_by_link_text("group page").click()
+
+    def logout(self, wd):
         wd.find_element_by_link_text("Logout").click()
+
+    def test_add_group(self):
+        wd = self.wd
+        self.open_page(wd)
+        self.login(wd)
+        self.add_group(wd)
+        self.logout(wd)
 
     def is_element_present(self, how, what):
         try:
