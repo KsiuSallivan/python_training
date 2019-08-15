@@ -1,7 +1,7 @@
 # -*- coding: utf-8 -*-
 from selenium import webdriver
 import unittest
-
+from contact import Contact
 
 class TestAddContact(unittest.TestCase):
 
@@ -21,20 +21,20 @@ class TestAddContact(unittest.TestCase):
         wd.find_element_by_name("pass").send_keys(password)
         wd.find_element_by_xpath("//input[@value='Login']").click()
 
-    def create_contact(self, wd):
+    def create_contact(self, wd, contact):
         wd.find_element_by_link_text("add new").click()
         wd.find_element_by_name("firstname").click()
         wd.find_element_by_name("firstname").clear()
-        wd.find_element_by_name("firstname").send_keys(u"Ксения")
+        wd.find_element_by_name("firstname").send_keys(contact.firstname)
         wd.find_element_by_name("lastname").click()
         wd.find_element_by_name("lastname").clear()
-        wd.find_element_by_name("lastname").send_keys(u"Курашова")
+        wd.find_element_by_name("lastname").send_keys(contact.lastname)
         wd.find_element_by_name("nickname").click()
         wd.find_element_by_name("nickname").clear()
-        wd.find_element_by_name("nickname").send_keys("KsiuSallivan")
+        wd.find_element_by_name("nickname").send_keys(contact.nickname)
         wd.find_element_by_name("email").click()
         wd.find_element_by_name("email").clear()
-        wd.find_element_by_name("email").send_keys("ksiu.sallivan@gmail.com")
+        wd.find_element_by_name("email").send_keys(contact.email)
         wd.find_element_by_name("submit").click()
         wd.find_element_by_link_text("home page").click()
 
@@ -45,7 +45,8 @@ class TestAddContact(unittest.TestCase):
         wd = self.wd
         self.open_page(wd)
         self.login(wd, username="admin", password="secret")
-        self.create_contact(wd)
+        self.create_contact(wd, Contact(firstname="Kseniya", lastname="Kurashova", nickname="KsiuSallivan",
+                       email="ksiu.sallivan@gmail.com"))
         self.logout(wd)
 
     def tearDown(self):
