@@ -4,23 +4,24 @@ import unittest
 
 
 class TestAddContact(unittest.TestCase):
+
     def setUp(self):
         self.wd = webdriver.Firefox()
         self.wd.implicitly_wait(30)
-    
-    def test_add_contact(self):
-        wd = self.wd
-        #open page
+
+    def open_page(self, wd):
         wd.get("http://localhost/addressbook/")
-        #login
+
+    def login(self, wd, username, password):
         wd.find_element_by_name("user").click()
         wd.find_element_by_name("user").clear()
-        wd.find_element_by_name("user").send_keys("admin")
+        wd.find_element_by_name("user").send_keys(username)
         wd.find_element_by_name("pass").click()
         wd.find_element_by_name("pass").clear()
-        wd.find_element_by_name("pass").send_keys("secret")
+        wd.find_element_by_name("pass").send_keys(password)
         wd.find_element_by_xpath("//input[@value='Login']").click()
-        #add new contact
+
+    def create_contact(self, wd):
         wd.find_element_by_link_text("add new").click()
         wd.find_element_by_name("firstname").click()
         wd.find_element_by_name("firstname").clear()
@@ -36,9 +37,17 @@ class TestAddContact(unittest.TestCase):
         wd.find_element_by_name("email").send_keys("ksiu.sallivan@gmail.com")
         wd.find_element_by_name("submit").click()
         wd.find_element_by_link_text("home page").click()
-        #logout
+
+    def logout(self, wd):
         wd.find_element_by_link_text("Logout").click()
-    
+
+    def test_add_contact(self):
+        wd = self.wd
+        self.open_page(wd)
+        self.login(wd, username="admin", password="secret")
+        self.create_contact(wd)
+        self.logout(wd)
+
     def tearDown(self):
         self.wd.quit()
 
