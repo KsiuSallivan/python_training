@@ -49,9 +49,8 @@ class test_add_group(unittest.TestCase):
         self.create_group(wd, Group(name="111", header="222", footer="333"))
         self.logout(wd)
 
-
-def tearDown(self):
-    self.wd.quit()
+    def tearDown(self):
+        self.wd.quit()
 
 
 if __name__ == "__main__":
