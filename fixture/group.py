@@ -27,3 +27,5 @@ class GroupHelper:
         # submit deletion
         wd.find_element_by_name("delete").click()
         wd.find_element_by_link_text("group page").click()
+
+    
