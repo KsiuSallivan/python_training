@@ -14,10 +14,10 @@ def app(request):
 
 
 def test_add_contact(app):
-    app.login(username="admin", password="secret")
-    app.create_contact(Contact(firstname="Kseniya", lastname="Kurashova", nickname="KsiuSallivan",
+    app.session.login(username="admin", password="secret")
+    app.contact.create(Contact(firstname="Kseniya", lastname="Kurashova", nickname="KsiuSallivan",
                        email="ksiu.sallivan@gmail.com"))
-    app.logout()
+    app.session.logout()
 
 
 if __name__ == "__main__":
