@@ -32,9 +32,12 @@ class ContactHelper:
 
     def update_first_contact(self):
         wd = self.app.wd
+        # open first contact for update
         wd.find_element_by_css_selector("img[alt='Edit']").click()
+        # edit company from 0
         wd.find_element_by_name("company").click()
         wd.find_element_by_name("company").clear()
         wd.find_element_by_name("company").send_keys("BlaBlaShow")
+        # submit modify
         wd.find_element_by_name("update").click()
         wd.find_element_by_link_text("home page").click()

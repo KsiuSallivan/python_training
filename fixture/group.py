@@ -28,4 +28,16 @@ class GroupHelper:
         wd.find_element_by_name("delete").click()
         wd.find_element_by_link_text("group page").click()
 
-    
+    def update_first_group(self):
+        wd = self.app.wd
+        wd.find_element_by_link_text("groups").click()
+        # open first contact for update
+        wd.find_element_by_name("selected[]").click()
+        wd.find_element_by_name("edit").click()
+        # edit contact from 0
+        wd.find_element_by_name("group_name").click()
+        wd.find_element_by_name("group_name").clear()
+        wd.find_element_by_name("group_name").send_keys("100500")
+        # submit modify
+        wd.find_element_by_name("update").click()
+        wd.find_element_by_link_text("home").click()
