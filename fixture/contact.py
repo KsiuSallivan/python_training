@@ -46,3 +46,10 @@ class ContactHelper:
         wd.find_element_by_name("email").click()
         wd.find_element_by_name("email").clear()
         wd.find_element_by_name("email").send_keys(contact.email)
+
+    def modify_first_contact(self, new_contact_data):
+        self.data_contact(new_contact_data)
+
+    def count(self):
+        wd = self.app.wd
+        return len(wd.find_elements_by_xpath("//input[@name='selected[]']"))
