@@ -50,3 +50,7 @@ class GroupHelper:
 
     def modify_first_group(self, new_group_data):
         self.data_group(new_group_data)
+
+    def count(self):
+        wd = self.app.wd
+        return len(wd.find_elements_by_name("selected[]"))
