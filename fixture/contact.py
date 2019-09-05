@@ -1,6 +1,3 @@
-from model.contact import Contact
-
-
 class ContactHelper:
 
     def __init__(self, app):
@@ -30,11 +27,6 @@ class ContactHelper:
         wd = self.app.wd
         wd.find_element_by_css_selector("input[value='Delete']").click()
         wd.switch_to_alert().accept()
-
-    def open_home_page(self):
-        wd = self.app.wd
-        if not (len(wd.find_elements_by_xpath("//input[@value='Send e-Mail']")) > 0):
-            wd.find_element_by_link_text("home").click()
 
     def type(self, field_name, text):
         wd = self.app.wd
