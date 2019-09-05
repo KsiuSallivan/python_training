@@ -2,6 +2,7 @@ from model.contact import Contact
 
 
 def test_modify_contact_firstname(app):
+    app.contact.open_home_page()
     if app.contact.count() == 0:
         app.contact.create_button()
         app.contact.data_contact(Contact(firstname="Kseniya", lastname="Kurashova", nickname="KsiuSallivan",
@@ -12,10 +13,10 @@ def test_modify_contact_firstname(app):
     app.contact.edit_button()
     app.contact.modify_first_contact(Contact(firstname="Candy"))
     app.contact.update_button()
-    app.contact.open_home_page()
 
 
 def test_modify_contact_lastname(app):
+    app.contact.open_home_page()
     if app.contact.count() == 0:
         app.contact.create_button()
         app.contact.data_contact(Contact(firstname="Kseniya", lastname="Kurashova", nickname="KsiuSallivan",
@@ -26,4 +27,3 @@ def test_modify_contact_lastname(app):
     app.contact.edit_button()
     app.contact.modify_first_contact(Contact(lastname="Twilight"))
     app.contact.update_button()
-    app.contact.open_home_page()

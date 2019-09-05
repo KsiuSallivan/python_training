@@ -1,3 +1,6 @@
+from model.contact import Contact
+
+
 class ContactHelper:
 
     def __init__(self, app):
@@ -13,7 +16,7 @@ class ContactHelper:
 
     def edit_button(self):
         wd = self.app.wd
-        wd.find_element_by_css_selector("img[alt='Edit']").click()
+        wd.find_element_by_xpath("//img[@alt='Edit']").click()
 
     def update_button(self):
         wd = self.app.wd
@@ -42,10 +45,10 @@ class ContactHelper:
 
     def data_contact(self, contact):
         wd = self.app.wd
-        self.type("contact_firstname", contact.firstname)
-        self.type("contact_lastname", contact.lastname)
-        self.type("contact_nickname", contact.nickname)
-        self.type("contact_email", contact.email)
+        self.type("firstname", contact.firstname)
+        self.type("lastname", contact.lastname)
+        self.type("nickname", contact.nickname)
+        self.type("email", contact.email)
 
     def modify_first_contact(self, new_contact_data):
         self.data_contact(new_contact_data)
