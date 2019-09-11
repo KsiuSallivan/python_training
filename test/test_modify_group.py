@@ -15,6 +15,7 @@ def test_modify_group_name(app):
     app.group.edit_button()
     app.group.modify_first_group(group)
     app.group.update_button()
+    app.group.group_cache_none()
     new_groups = app.group.get_group_list()
     assert len(old_groups) == len(new_groups)
     old_groups[0] = group

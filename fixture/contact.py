@@ -52,13 +52,19 @@ class ContactHelper:
         wd = self.app.wd
         return len(wd.find_elements_by_xpath("//input[@name='selected[]']"))
 
+    contact_cache = None
+
     def get_contact_list(self):
-        wd = self.app.wd
-        self.app.open_home_page()
-        contacts = []
-        for element in wd.find_elements_by_css_selector("tr[name='entry']"):
-            id = element.find_element_by_name("selected[]").get_attribute("value")
-            firstname = element.find_element_by_xpath("//td[3]")
-            lastname = element.find_element_by_xpath("//td[2]")
-            contacts.append(Contact(id=id, firstname=firstname, lastname=lastname))
-        return contacts
+        if self.contact_cache is None:
+            wd = self.app.wd
+            self.app.open_home_page()
+            self.contact_cache = []
+            for element in wd.find_elements_by_css_selector("tr[name='entry']"):
+                id = element.find_element_by_name("selected[]").get_attribute("value")
+                firstname = element.find_element_by_xpath("//td[3]")
+                lastname = element.find_element_by_xpath("//td[2]")
+                self.contact_cache.append(Contact(id=id, firstname=firstname, lastname=lastname))
+        return list(self.contact_cache)
+
+    def contact_cache_none(self):
+        self.contact_cache = None
