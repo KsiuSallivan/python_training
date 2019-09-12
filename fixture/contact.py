@@ -22,9 +22,12 @@ class ContactHelper:
         wd = self.app.wd
         wd.find_element_by_name("update").click()
 
-    def select_first_contact(self):
+    def select_contact_by_index(self, index):
         wd = self.app.wd
-        wd.find_element_by_xpath("//input[@name='selected[]']").click()
+        wd.find_elements_by_name("selected[]")[index].click()
+
+    def select_first_contact(self):
+        self.select_contact_by_index(0)
 
     def delete_button(self):
         wd = self.app.wd
@@ -45,7 +48,7 @@ class ContactHelper:
         self.type("nickname", contact.nickname)
         self.type("email", contact.email)
 
-    def modify_first_contact(self, new_contact_data):
+    def modify_contact(self, new_contact_data):
         self.data_contact(new_contact_data)
 
     def count(self):
