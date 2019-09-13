@@ -50,12 +50,14 @@ class ContactHelper:
          self.data_contact(contact)
          self.submit_button()
          self.app.open_home_page()
+         self.contact_cache = None
 
     def delete_first_contact(self):
         self.app.open_home_page()
         self.select_first_contact()
         self.delete_button()
         self.app.open_home_page()
+        self.contact_cache = None
 
     def modify_first_contact(self, new_contact_data):
         self.app.open_home_page()
@@ -64,19 +66,23 @@ class ContactHelper:
         self.data_contact(new_contact_data)
         self.update_button()
         self.app.open_home_page()
+        self.contact_cache = None
 
     def count(self):
         wd = self.app.wd
         self.app.open_home_page()
         return len(wd.find_elements_by_xpath("//input[@name='selected[]']"))
 
+    contact_cache = None
+
     def get_contact_list(self):
-        wd = self.app.wd
-        self.app.open_home_page()
-        contacts = []
-        for element in wd.find_elements_by_name("entry"):
-            id = element.find_element_by_tag_name("input").get_attribute("value")
-            firstname = element.find_element_by_xpath(".//td[3]").text
-            lastname = element.find_element_by_xpath(".//td[2]").text
-            contacts.append(Contact(id=id, firstname=firstname, lastname=lastname))
-        return contacts
+        if self.contact_cache is None:
+            wd = self.app.wd
+            self.app.open_home_page()
+            self.contact_cache = []
+            for element in wd.find_elements_by_name("entry"):
+                id = element.find_element_by_tag_name("input").get_attribute("value")
+                firstname = element.find_element_by_xpath(".//td[3]").text
+                lastname = element.find_element_by_xpath(".//td[2]").text
+                self.contact_cache.append(Contact(id=id, firstname=firstname, lastname=lastname))
+        return list(self.contact_cache)
