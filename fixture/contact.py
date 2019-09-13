@@ -39,17 +39,35 @@ class ContactHelper:
             wd.find_element_by_name(field_name).send_keys(text)
 
     def data_contact(self, contact):
-        wd = self.app.wd
         self.type("firstname", contact.firstname)
         self.type("lastname", contact.lastname)
         self.type("nickname", contact.nickname)
         self.type("email", contact.email)
 
+    def create_contact(self, contact):
+         self.app.open_home_page()
+         self.create_button()
+         self.data_contact(contact)
+         self.submit_button()
+         self.app.open_home_page()
+
+    def delete_first_contact(self):
+        self.app.open_home_page()
+        self.select_first_contact()
+        self.delete_button()
+        self.app.open_home_page()
+
     def modify_first_contact(self, new_contact_data):
+        self.app.open_home_page()
+        self.select_first_contact()
+        self.edit_button()
         self.data_contact(new_contact_data)
+        self.update_button()
+        self.app.open_home_page()
 
     def count(self):
         wd = self.app.wd
+        self.app.open_home_page()
         return len(wd.find_elements_by_xpath("//input[@name='selected[]']"))
 
     def get_contact_list(self):

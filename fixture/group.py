@@ -43,16 +43,16 @@ class GroupHelper:
         self.select_group_by_index(0)
 
     def data_group(self, group):
-        wd = self.app.wd
         self.type("group_name", group.name)
         self.type("group_header", group.header)
         self.type("group_footer", group.footer)
 
     def create_group(self, group):
-         self.open_group_page()
-         self.create_button()
-         self.data_group(group)
-         self.submit_button()
+        self.open_group_page()
+        self.create_button()
+        self.data_group(group)
+        self.submit_button()
+        self.return_to_group_page()
 
     def delete_first_group(self):
         self.open_group_page()

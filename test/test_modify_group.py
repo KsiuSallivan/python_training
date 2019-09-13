@@ -5,7 +5,7 @@ from random import randrange
 def test_modify_first_name(app):
     # app.group.open_group_page()
     if app.group.count() == 0:
-         app.group.create_group(Group(name="147", header="555", footer="666"))
+        app.group.create_group(Group(name="147", header="555", footer="666"))
     # old_groups = app.group.get_group_list()
     # index = randrange(len(old_groups))
     # group = Group(name="New funny name")
