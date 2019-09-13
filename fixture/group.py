@@ -102,5 +102,5 @@ class GroupHelper:
         #         self.group_cache.append(Group(name=text, id=id))
         # return groups(self.group_cache)
 
-    def group_cache_none(self):
-        self.group_cache = None
+    # def group_cache_none(self):
+    #     self.group_cache = None
