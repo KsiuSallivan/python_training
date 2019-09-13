@@ -11,6 +11,10 @@ class GroupHelper:
         if not (wd.current_url.endswith("/group.php") and  len(wd.find_elements_by_name("new")) > 0):
             wd.find_element_by_link_text("groups").click()
 
+    def return_to_group_page(self):
+        wd = self.app.wd
+        wd.find_element_by_link_text("group page").click()
+
     def create_button(self):
         wd = self.app.wd
         wd.find_element_by_name("new").click()
@@ -44,6 +48,26 @@ class GroupHelper:
         self.type("group_header", group.header)
         self.type("group_footer", group.footer)
 
+    def create_group(self, group):
+         self.open_group_page()
+         self.create_button()
+         self.data_group(group)
+         self.submit_button()
+
+    def delete_first_group(self):
+        self.open_group_page()
+        self.select_first_group()
+        self.delete_button()
+        self.return_to_group_page()
+
+    def modify_first_group(self, new_group_data):
+        self.open_group_page()
+        self.select_first_group()
+        self.edit_button()
+        self.data_group(new_group_data)
+        self.update_button()
+        self.return_to_group_page()
+
     def type(self, field_name, text):
         wd = self.app.wd
         if text is not None:
@@ -51,11 +75,9 @@ class GroupHelper:
             wd.find_element_by_name(field_name).clear()
             wd.find_element_by_name(field_name).send_keys(text)
 
-    def modify_group(self, new_group_data):
-        self.data_group(new_group_data)
-
     def count(self):
         wd = self.app.wd
+        self.open_group_page()
         return len(wd.find_elements_by_name("selected[]"))
 
     group_cache = None
