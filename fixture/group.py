@@ -53,12 +53,14 @@ class GroupHelper:
         self.data_group(group)
         self.submit_button()
         self.return_to_group_page()
+        self.group_cache = None
 
     def delete_first_group(self):
         self.open_group_page()
         self.select_first_group()
         self.delete_button()
         self.return_to_group_page()
+        self.group_cache = None
 
     def modify_first_group(self, new_group_data):
         self.open_group_page()
@@ -67,6 +69,7 @@ class GroupHelper:
         self.data_group(new_group_data)
         self.update_button()
         self.return_to_group_page()
+        self.group_cache = None
 
     def type(self, field_name, text):
         wd = self.app.wd
@@ -80,27 +83,15 @@ class GroupHelper:
         self.open_group_page()
         return len(wd.find_elements_by_name("selected[]"))
 
-    # group_cache = None
+    group_cache = None
 
     def get_group_list(self):
-        wd = self.app.wd
-        self.open_group_page()
-        groups = []
-        for element in wd.find_elements_by_css_selector("span.group"):
-            text = element.text
-            id = element.find_element_by_name("selected[]").get_attribute("value")
-            groups.append(Group(name=text, id=id))
-        return groups
-
-        # if self.group_cache is None:
-        #     wd = self.app.wd
-        #     self.open_group_page()
-        #     self.group_cache = []
-        #     for element in wd.find_elements_by_css_selector("span.group"):
-        #         text = element.text
-        #         id = element.find_element_by_name("selected[]").get_attribute("value")
-        #         self.group_cache.append(Group(name=text, id=id))
-        # return groups(self.group_cache)
-
-    # def group_cache_none(self):
-    #     self.group_cache = None
+        if self.group_cache is None:
+            wd = self.app.wd
+            self.open_group_page()
+            self.group_cache = []
+            for element in wd.find_elements_by_css_selector("span.group"):
+                text = element.text
+                id = element.find_element_by_name("selected[]").get_attribute("value")
+                self.group_cache.append(Group(name=text, id=id))
+        return list(self.group_cache)
