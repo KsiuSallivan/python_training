@@ -27,7 +27,7 @@ class ContactHelper:
 
     def select_contact_edition_by_index(self, index):
         wd = self.app.wd
-        wd.find_element_by_xpath("//img[@alt='Edit']")[index].click()
+        wd.find_elements_by_xpath("//img[@alt='Edit']")[index].click()
 
     def delete_button(self):
         wd = self.app.wd
@@ -48,12 +48,12 @@ class ContactHelper:
         self.type("email", contact.email)
 
     def create_contact(self, contact):
-         self.app.open_home_page()
-         self.create_button()
-         self.data_contact(contact)
-         self.submit_button()
-         self.app.open_home_page()
-         self.contact_cache = None
+        self.app.open_home_page()
+        self.create_button()
+        self.data_contact(contact)
+        self.submit_button()
+        self.app.open_home_page()
+        self.contact_cache = None
 
     def delete_contact_by_index(self, index):
         self.app.open_home_page()
