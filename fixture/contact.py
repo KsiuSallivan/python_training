@@ -56,9 +56,11 @@ class ContactHelper:
         self.contact_cache = None
 
     def delete_contact_by_index(self, index):
+        wd = self.app.wd
         self.app.open_home_page()
         self.select_contact_by_index(index)
         self.delete_button()
+        wd.find_element_by_css_selector("div.msgbox")
         self.app.open_home_page()
         self.contact_cache = None
 
