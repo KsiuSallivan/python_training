@@ -54,6 +54,10 @@ class ContactHelper:
         self.type("lastname", contact.lastname)
         self.type("nickname", contact.nickname)
         self.type("email", contact.email)
+        self.type("home", contact.homephone)
+        self.type("mobile", contact.mobilephone)
+        self.type("work", contact.workphone)
+        self.type("phone2", contact.secondaryphone)
 
     def create_contact(self, contact):
         self.app.open_home_page()
