@@ -1,6 +1,7 @@
 from model.contact import Contact
 import re
 
+
 class ContactHelper:
 
     def __init__(self, app):
@@ -104,8 +105,7 @@ class ContactHelper:
                 lastname = cells[1].text
                 all_phones = cells[5].text.splitlines()
                 self.contact_cache.append(Contact(id=id, firstname=firstname, lastname=lastname,
-                                                  homephone=all_phones[0], mobilephone=all_phones[1],
-                                                  workphone=all_phones[2], secondaryphone=all_phones[3]))
+                                                  all_phones_from_home_page=all_phones))
         return list(self.contact_cache)
 
     def get_contact_info_from_edit_page(self, index):
