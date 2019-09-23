@@ -78,9 +78,9 @@ class GroupHelper:
         self.return_to_group_page()
         self.group_cache = None
 
-    def modify_group_by_id(self, index, new_group_data):
+    def modify_group_by_id(self, id, new_group_data):
         self.open_group_page()
-        self.select_group_by_index(index)
+        self.select_group_by_id(id)
         self.edit_button()
         self.data_group(new_group_data)
         self.update_button()
