@@ -36,7 +36,7 @@ class ContactHelper:
 
     def select_contact_to_edit_by_id(self, id):
         wd = self.app.wd
-        wd.find_element_by_css_selector("//table[@id='maintable']/tbody/tr/td[8]/a/img" % id).click()
+        wd.find_element_by_css_selector("input[value='%s']" % id and "img[alt='Edit']").click()
 
     def select_contact_to_view_by_index(self, index):
         wd = self.app.wd
@@ -119,8 +119,8 @@ class ContactHelper:
                 firstname = cells[2].text
                 lastname = cells[1].text
                 address = cells[3].text
-                all_emails = cells[4].text.splitlines()
-                all_phones = cells[5].text.splitlines()
+                all_emails = cells[4].text
+                all_phones = cells[5].text
                 self.contact_cache.append(Contact(id=id, firstname=firstname, lastname=lastname, address=address,
                                                   all_emails_from_home_page=all_emails,
                                                   all_phones_from_home_page=all_phones))
