@@ -33,12 +33,13 @@ def app(request):
 @pytest.fixture(scope="session")
 def db(request):
     db_config = load_config(request.config.getoption("--target"))['db']
-    dbFixture = DbFixture(host=db_config['host'], name=db_config['name'], user=db_config['user'],
+    dbfixture = DbFixture(host=db_config['host'], name=db_config['name'], user=db_config['user'],
                           password=db_config['password'])
+    
     def fin():
-        dbFixture.destroy()
+        dbfixture.destroy()
     request.addfinalizer(fin)
-    return dbFixture
+    return dbfixture
 
 
 @pytest.fixture(scope="session", autouse=True)
