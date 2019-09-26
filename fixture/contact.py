@@ -1,4 +1,5 @@
 from model.contact import Contact
+from model.group import Group
 import re
 
 
@@ -144,6 +145,29 @@ class ContactHelper:
                        homephone=homephone, workphone=workphone, mobilephone=mobilephone,
                        secondaryphone=secondaryphone, address=address,
                        email=email, email2=email2, email3=email3)
+
+    def add_contact_to_group(self, id):
+        wd = self.app.wd
+        self.app.open_home_page()
+        self.select_contact_by_id(id)
+        wd.find_element_by_name("to_group").click()
+        wd.find_element_by_css_selector("option[value='%s']" % id).click()
+        wd.find_element_by_name("add").click()
+        self.app.open_home_page()
+        wd.find_element_by_name("group").click()
+        wd.find_element_by_css_selector("option[value]").click()
+
+    def del_contact_from_group(self, id):
+        wd = self.app.wd
+        self.app.open_home_page()
+        wd.find_element_by_name("group").click()
+        wd.find_element_by_css_selector("option[value='%s']" % id).click()
+        self.select_contact_by_id(id)
+        wd.find_element_by_css_selector("input[name='remove']").click()
+        self.app.open_home_page()
+        wd.find_element_by_name("group").click()
+        wd.find_element_by_css_selector("option[value]").click()
+
 
     # def get_contact_info_from_view_page(self, index):
     #     wd = self.app.wd
