@@ -15,8 +15,8 @@ def twoinone(s):
     return re.sub('\s+', '', s)
 
 
-def clear(self, s):
-    self.twoinone(s)
+def clear(s):
+    twoinone(s)
     return re.sub("[() -]", "", s)
 
 
