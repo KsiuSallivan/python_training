@@ -1,5 +1,6 @@
 import re
 
+
 # Задание 14
 def test_contact_info_on_home_page_by_app(app):
     contact_from_home_page = app.contact.get_contact_list()[0]
