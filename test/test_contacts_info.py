@@ -13,7 +13,7 @@ def test_contact_info_on_home_page_by_app(app):
 
 
 def twoinone(s):
-    return re.sub('\s+', '', s)
+    return re.sub('\\s+', '', s)
 
 
 def clear(s):
