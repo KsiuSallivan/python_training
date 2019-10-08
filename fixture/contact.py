@@ -99,6 +99,14 @@ class ContactHelper:
         self.app.open_home_page()
         self.contact_cache = None
 
+    def modify_contact_by_index(self, index, new_contact_data):
+        self.app.open_home_page()
+        self.select_contact_to_edit_by_index(index)
+        self.data_contact(new_contact_data)
+        self.update_button()
+        self.app.open_home_page()
+        self.contact_cache = None
+
     def modify_first_contact(self):
         self.modify_contact_by_id(0)
 
