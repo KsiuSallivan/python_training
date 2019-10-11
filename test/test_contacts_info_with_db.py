@@ -3,15 +3,27 @@ import re
 
 
 # Задание 21
+# для всех элементов
 def test_contact_info_on_home_page_by_db(app, db):
-    contact_from_home_page = app.contact.get_contact_list()[0]
-    contact_from_db = db.get_contact_list()[0]
-    assert contact_from_home_page.all_phones_from_home_page == merge_phones_like_on_home_page(contact_from_db)
-    assert contact_from_home_page.all_emails_from_home_page == merge_emails_like_on_home_page(contact_from_db)
-    assert contact_from_home_page.firstname == contact_from_db.firstname
-    assert contact_from_home_page.lastname == contact_from_db.lastname
-    assert contact_from_home_page.address == contact_from_db.address
-    # assert sorted(contact_from_home_page, key=Contact.id_or_max) == sorted(contact_from_db, key=Contact.id_or_max)
+    for contact_from_home_page in app.contact.get_contact_list():
+        for contact_from_db in db.get_contact_list():
+            if contact_from_home_page.id == contact_from_db.id:
+                assert contact_from_home_page.all_phones_from_home_page == merge_phones_like_on_home_page(contact_from_db)
+                assert contact_from_home_page.all_emails_from_home_page == merge_emails_like_on_home_page(contact_from_db)
+                assert contact_from_home_page.firstname == contact_from_db.firstname
+                assert contact_from_home_page.lastname == contact_from_db.lastname
+                assert contact_from_home_page.address == contact_from_db.address
+
+
+# для первого элемента
+# def test_contact_info_on_home_page_by_db(app, db):
+#     contact_from_home_page = app.contact.get_contact_list()[0]
+#     contact_from_db = db.get_contact_list()[0]
+#     assert contact_from_home_page.all_phones_from_home_page == merge_phones_like_on_home_page(contact_from_db)
+#     assert contact_from_home_page.all_emails_from_home_page == merge_emails_like_on_home_page(contact_from_db)
+#     assert contact_from_home_page.firstname == contact_from_db.firstname
+#     assert contact_from_home_page.lastname == contact_from_db.lastname
+#     assert contact_from_home_page.address == contact_from_db.address
 
 
 def twoinone(s):
