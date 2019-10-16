@@ -1,0 +1,122 @@
+{
+  "0b65d3a49f9c9df9d932c0cc7bb3a8e1" : {
+    "statistic" : {
+      "failed" : 0,
+      "broken" : 1,
+      "skipped" : 0,
+      "passed" : 0,
+      "unknown" : 0,
+      "total" : 1
+    },
+    "items" : [ {
+      "uid" : "6d791bc9aadb7e1",
+      "status" : "broken",
+      "statusDetails" : "AttributeError: module 'pytest' has no attribute 'allure'",
+      "time" : {
+        "start" : 1571222309227,
+        "stop" : 1571222309227,
+        "duration" : 0
+      }
+    } ]
+  },
+  "a9e54997124ffcf79d6e406b7a901a5a" : {
+    "statistic" : {
+      "failed" : 0,
+      "broken" : 1,
+      "skipped" : 0,
+      "passed" : 0,
+      "unknown" : 0,
+      "total" : 1
+    },
+    "items" : [ {
+      "uid" : "ca6ddc293c7eb917",
+      "status" : "broken",
+      "statusDetails" : "AttributeError: module 'pytest' has no attribute 'allure'",
+      "time" : {
+        "start" : 1571222309481,
+        "stop" : 1571222309482,
+        "duration" : 1
+      }
+    } ]
+  },
+  "d598afe6d1acf12cca687ec76502ed1c" : {
+    "statistic" : {
+      "failed" : 0,
+      "broken" : 1,
+      "skipped" : 0,
+      "passed" : 0,
+      "unknown" : 0,
+      "total" : 1
+    },
+    "items" : [ {
+      "uid" : "37b6ef2a2279c73a",
+      "status" : "broken",
+      "statusDetails" : "AttributeError: module 'pytest' has no attribute 'allure'",
+      "time" : {
+        "start" : 1571222309981,
+        "stop" : 1571222309981,
+        "duration" : 0
+      }
+    } ]
+  },
+  "88e71eba3883d6b7c4faf1aa309967a5" : {
+    "statistic" : {
+      "failed" : 0,
+      "broken" : 1,
+      "skipped" : 0,
+      "passed" : 0,
+      "unknown" : 0,
+      "total" : 1
+    },
+    "items" : [ {
+      "uid" : "b3b8f3ac93e219",
+      "status" : "broken",
+      "statusDetails" : "AttributeError: module 'pytest' has no attribute 'allure'",
+      "time" : {
+        "start" : 1571222308638,
+        "stop" : 1571222308638,
+        "duration" : 0
+      }
+    } ]
+  },
+  "4d9d8567e673aa821bf47870c3a46b82" : {
+    "statistic" : {
+      "failed" : 0,
+      "broken" : 1,
+      "skipped" : 0,
+      "passed" : 0,
+      "unknown" : 0,
+      "total" : 1
+    },
+    "items" : [ {
+      "uid" : "ea15c62efa7c5423",
+      "status" : "broken",
+      "statusDetails" : "AttributeError: module 'pytest' has no attribute 'allure'",
+      "time" : {
+        "start" : 1571222308979,
+        "stop" : 1571222308980,
+        "duration" : 1
+      }
+    } ]
+  },
+  "cdeb0e0d3451d87db983ec26b3ad1996" : {
+    "statistic" : {
+      "failed" : 0,
+      "broken" : 1,
+      "skipped" : 0,
+      "passed" : 0,
+      "unknown" : 0,
+      "total" : 1
+    },
+    "items" : [ {
+      "uid" : "7f10a43432a1a48e",
+      "status" : "broken",
+      "statusDetails" : "AttributeError: module 'pytest' has no attribute 'allure'",
+      "time" : {
+        "start" : 1571222309731,
+        "stop" : 1571222309732,
+        "duration" : 1
+      }
+    } ]
+  }
+}
