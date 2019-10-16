@@ -1,0 +1,130 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<robot generator="Robot 2.9 (Python 3.7.4 on win32)" generated="20191016 14:08:39.625">
+<suite id="s1" name="Group Scenarios" source="C:\Users\ksiu_\PycharmProjects\python_training\rf\group_scenarios.robot">
+<kw name="Init Fixtures" library="rf.AddressBook" type="setup">
+<status status="PASS" starttime="20191016 14:08:40.145" endtime="20191016 14:09:11.680"></status>
+</kw>
+<test id="s1-t1" name="Add new group">
+<kw name="Get Group List" library="rf.AddressBook">
+<assign>
+<var>${old_list}</var>
+</assign>
+<msg timestamp="20191016 14:09:11.694" level="INFO">${old_list} = [125:New funny name:header18Jjr60AkH:footer1Kke , 129:New funny name:header1MvUsp 4cK:footer1KvA, 130:::, 131:New funny name:header18Jjr60AkH:footer1Kke , 132:name16mwrtEz:header1 f  8Vas3:footer1Ur8k...</msg>
+<status status="PASS" starttime="20191016 14:09:11.683" endtime="20191016 14:09:11.694"></status>
+</kw>
+<kw name="New Group" library="rf.AddressBook">
+<arguments>
+<arg>name1</arg>
+<arg>header1</arg>
+<arg>footer1</arg>
+</arguments>
+<assign>
+<var>${group}</var>
+</assign>
+<msg timestamp="20191016 14:09:11.696" level="INFO">${group} = None:name1:header1:footer1</msg>
+<status status="PASS" starttime="20191016 14:09:11.695" endtime="20191016 14:09:11.696"></status>
+</kw>
+<kw name="Create Group" library="rf.AddressBook">
+<arguments>
+<arg>${group}</arg>
+</arguments>
+<status status="PASS" starttime="20191016 14:09:11.697" endtime="20191016 14:09:16.520"></status>
+</kw>
+<kw name="Get Group List" library="rf.AddressBook">
+<assign>
+<var>${new_list}</var>
+</assign>
+<msg timestamp="20191016 14:09:16.545" level="INFO">${new_list} = [125:New funny name:header18Jjr60AkH:footer1Kke , 129:New funny name:header1MvUsp 4cK:footer1KvA, 130:::, 131:New funny name:header18Jjr60AkH:footer1Kke , 132:name16mwrtEz:header1 f  8Vas3:footer1Ur8k...</msg>
+<status status="PASS" starttime="20191016 14:09:16.535" endtime="20191016 14:09:16.546"></status>
+</kw>
+<kw name="Append To List" library="Collections">
+<doc>Adds ``values`` to the end of ``list``.</doc>
+<arguments>
+<arg>${old_list}</arg>
+<arg>${group}</arg>
+</arguments>
+<status status="PASS" starttime="20191016 14:09:16.563" endtime="20191016 14:09:16.565"></status>
+</kw>
+<kw name="Group Lists Should Be Equal" library="rf.AddressBook">
+<arguments>
+<arg>${new_list}</arg>
+<arg>${old_list}</arg>
+</arguments>
+<status status="PASS" starttime="20191016 14:09:16.566" endtime="20191016 14:09:16.568"></status>
+</kw>
+<status status="PASS" starttime="20191016 14:09:11.681" endtime="20191016 14:09:16.569" critical="yes"></status>
+</test>
+<test id="s1-t2" name="Delete group">
+<kw name="Get Group List" library="rf.AddressBook">
+<assign>
+<var>${old_list}</var>
+</assign>
+<msg timestamp="20191016 14:09:16.587" level="INFO">${old_list} = [125:New funny name:header18Jjr60AkH:footer1Kke , 129:New funny name:header1MvUsp 4cK:footer1KvA, 130:::, 131:New funny name:header18Jjr60AkH:footer1Kke , 132:name16mwrtEz:header1 f  8Vas3:footer1Ur8k...</msg>
+<status status="PASS" starttime="20191016 14:09:16.575" endtime="20191016 14:09:16.587"></status>
+</kw>
+<kw name="Get Length" library="BuiltIn">
+<doc>Returns and logs the length of the given item as an integer.</doc>
+<arguments>
+<arg>${old_list}</arg>
+</arguments>
+<assign>
+<var>${len}</var>
+</assign>
+<msg timestamp="20191016 14:09:16.589" level="INFO">Length is 73</msg>
+<msg timestamp="20191016 14:09:16.589" level="INFO">${len} = 73</msg>
+<status status="PASS" starttime="20191016 14:09:16.588" endtime="20191016 14:09:16.589"></status>
+</kw>
+<kw name="Evaluate" library="BuiltIn">
+<doc>Evaluates the given expression in Python and returns the results.</doc>
+<arguments>
+<arg>random.randrange(${len})</arg>
+<arg>random</arg>
+</arguments>
+<assign>
+<var>${index}</var>
+</assign>
+<msg timestamp="20191016 14:09:16.614" level="INFO">${index} = 49</msg>
+<status status="PASS" starttime="20191016 14:09:16.591" endtime="20191016 14:09:16.614"></status>
+</kw>
+<kw name="Get From List" library="Collections">
+<doc>Returns the value specified with an ``index`` from ``list``.</doc>
+<arguments>
+<arg>${old_list}</arg>
+<arg>${index}</arg>
+</arguments>
+<assign>
+<var>${group}</var>
+</assign>
+<msg timestamp="20191016 14:09:16.620" level="INFO">${group} = 181:name16mwrtEz:header1 f  8Vas3:footer1Ur8kgixWC</msg>
+<status status="PASS" starttime="20191016 14:09:16.619" endtime="20191016 14:09:16.621"></status>
+</kw>
+<kw name="Delete Group" library="rf.AddressBook">
+<arguments>
+<arg>${group}</arg>
+</arguments>
+<msg timestamp="20191016 14:09:26.663" level="FAIL">NoSuchElementException: Message: Unable to locate element: input[value='181:name16mwrtEz:header1 f  8Vas3:footer1Ur8kgixWC']
+</msg>
+<status status="FAIL" starttime="20191016 14:09:16.622" endtime="20191016 14:09:26.663"></status>
+</kw>
+<status status="FAIL" starttime="20191016 14:09:16.573" endtime="20191016 14:09:26.664" critical="yes">NoSuchElementException: Message: Unable to locate element: input[value='181:name16mwrtEz:header1 f  8Vas3:footer1Ur8kgixWC']
+</status>
+</test>
+<kw name="Destroy Fixtures" library="rf.AddressBook" type="teardown">
+<status status="PASS" starttime="20191016 14:09:26.669" endtime="20191016 14:09:28.732"></status>
+</kw>
+<status status="FAIL" starttime="20191016 14:08:39.628" endtime="20191016 14:09:28.732"></status>
+</suite>
+<statistics>
+<total>
+<stat pass="1" fail="1">Critical Tests</stat>
+<stat pass="1" fail="1">All Tests</stat>
+</total>
+<tag>
+</tag>
+<suite>
+<stat pass="1" fail="1" id="s1" name="Group Scenarios">Group Scenarios</stat>
+</suite>
+</statistics>
+<errors>
+</errors>
+</robot>
