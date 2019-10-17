@@ -1,16 +1,16 @@
 {
-  "uid" : "ca6ddc293c7eb917",
-  "name" : "test_add_group[None:name1qWS 31kfB:header1CrjhOVpQ:footer1  ME3 l]",
-  "fullName" : "test.test_add_group#test_add_group",
-  "historyId" : "a9e54997124ffcf79d6e406b7a901a5a",
+  "uid" : "ccaf67ea3feb9a1b",
+  "name" : "test_add_group[None:::]",
+  "fullName" : "test.test_add_group.test_add_group[None#:]",
+  "historyId" : "88e71eba3883d6b7c4faf1aa309967a5",
   "time" : {
-    "start" : 1571222309481,
-    "stop" : 1571222309482,
-    "duration" : 1
+    "start" : 1571222308638,
+    "stop" : 1571222308638,
+    "duration" : 0
   },
   "status" : "broken",
   "statusMessage" : "AttributeError: module 'pytest' has no attribute 'allure'",
-  "statusTrace" : "app = <fixture.application.Application object at 0x03F320F0>, db = <fixture.db.DbFixture object at 0x03F3EF50>, json_groups = None:name1qWS 31kfB:header1CrjhOVpQ:footer1  ME3 l\ncheck_ui = False\n\n    def test_add_group(app, db, json_groups, check_ui):\n        group = json_groups\n>       with pytest.allure.step('Given a group list'):\nE       AttributeError: module 'pytest' has no attribute 'allure'\n\ntest\\test_add_group.py:8: AttributeError",
+  "statusTrace" : "app = <fixture.application.Application object at 0x03F320F0>, db = <fixture.db.DbFixture object at 0x03F3EF50>, json_groups = None:::, check_ui = False\n\n    def test_add_group(app, db, json_groups, check_ui):\n        group = json_groups\n>       with pytest.allure.step('Given a group list'):\nE       AttributeError: module 'pytest' has no attribute 'allure'\n\ntest\\test_add_group.py:8: AttributeError",
   "flaky" : false,
   "newFailed" : false,
   "beforeStages" : [ {
@@ -24,40 +24,25 @@
     "steps" : [ ],
     "attachments" : [ ],
     "parameters" : [ ],
-    "hasContent" : false,
-    "stepsCount" : 0,
     "shouldDisplayMessage" : false,
-    "attachmentsCount" : 0
+    "attachmentsCount" : 0,
+    "hasContent" : false,
+    "stepsCount" : 0
   }, {
     "name" : "check_ui",
     "time" : {
-      "start" : 1571222309480,
-      "stop" : 1571222309480,
+      "start" : 1571222308636,
+      "stop" : 1571222308636,
       "duration" : 0
     },
     "status" : "passed",
     "steps" : [ ],
     "attachments" : [ ],
     "parameters" : [ ],
-    "hasContent" : false,
-    "stepsCount" : 0,
     "shouldDisplayMessage" : false,
-    "attachmentsCount" : 0
-  }, {
-    "name" : "app",
-    "time" : {
-      "start" : 1571222309246,
-      "stop" : 1571222309480,
-      "duration" : 234
-    },
-    "status" : "passed",
-    "steps" : [ ],
-    "attachments" : [ ],
-    "parameters" : [ ],
+    "attachmentsCount" : 0,
     "hasContent" : false,
-    "stepsCount" : 0,
-    "shouldDisplayMessage" : false,
-    "attachmentsCount" : 0
+    "stepsCount" : 0
   }, {
     "name" : "db",
     "time" : {
@@ -69,10 +54,25 @@
     "steps" : [ ],
     "attachments" : [ ],
     "parameters" : [ ],
-    "hasContent" : false,
-    "stepsCount" : 0,
     "shouldDisplayMessage" : false,
-    "attachmentsCount" : 0
+    "attachmentsCount" : 0,
+    "hasContent" : false,
+    "stepsCount" : 0
+  }, {
+    "name" : "app",
+    "time" : {
+      "start" : 1571222278644,
+      "stop" : 1571222308635,
+      "duration" : 29991
+    },
+    "status" : "passed",
+    "steps" : [ ],
+    "attachments" : [ ],
+    "parameters" : [ ],
+    "shouldDisplayMessage" : false,
+    "attachmentsCount" : 0,
+    "hasContent" : false,
+    "stepsCount" : 0
   } ],
   "afterStages" : [ {
     "name" : "stop::fin",
@@ -85,10 +85,10 @@
     "steps" : [ ],
     "attachments" : [ ],
     "parameters" : [ ],
-    "hasContent" : false,
-    "stepsCount" : 0,
     "shouldDisplayMessage" : false,
-    "attachmentsCount" : 0
+    "attachmentsCount" : 0,
+    "hasContent" : false,
+    "stepsCount" : 0
   }, {
     "name" : "db::fin",
     "time" : {
@@ -100,10 +100,10 @@
     "steps" : [ ],
     "attachments" : [ ],
     "parameters" : [ ],
-    "hasContent" : false,
-    "stepsCount" : 0,
     "shouldDisplayMessage" : false,
-    "attachmentsCount" : 0
+    "attachmentsCount" : 0,
+    "hasContent" : false,
+    "stepsCount" : 0
   } ],
   "labels" : [ {
     "name" : "parentSuite",
@@ -111,6 +111,9 @@
   }, {
     "name" : "suite",
     "value" : "test_add_group"
+  }, {
+    "name" : "subSuite",
+    "value" : "test_add_group[None"
   }, {
     "name" : "host",
     "value" : "DESKTOP-HD5JO06"
@@ -132,21 +135,15 @@
   } ],
   "parameters" : [ {
     "name" : "json_groups",
-    "value" : "None:name1qWS 31kfB:header1CrjhOVpQ:footer1  ME3 l"
+    "value" : "None:::"
   } ],
   "links" : [ ],
-  "hidden" : false,
-  "retry" : false,
+  "hidden" : true,
+  "retry" : true,
   "extra" : {
-    "severity" : "normal",
-    "retries" : [ ],
-    "categories" : [ {
-      "name" : "Test defects",
-      "matchedStatuses" : [ ],
-      "flaky" : false
-    } ],
+    "categories" : [ ],
     "tags" : [ ]
   },
-  "source" : "ca6ddc293c7eb917.json",
-  "parameterValues" : [ "None:name1qWS 31kfB:header1CrjhOVpQ:footer1  ME3 l" ]
+  "source" : "ccaf67ea3feb9a1b.json",
+  "parameterValues" : [ "None:::" ]
 }
