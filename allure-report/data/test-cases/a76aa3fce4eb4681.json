@@ -1,17 +1,32 @@
 {
-  "uid" : "7cc739988031786f",
-  "name" : "test_add_group[None:name16mwrtEz:header1 f  8Vas3:footer1Ur8kgixWC]",
+  "uid" : "a76aa3fce4eb4681",
+  "name" : "test_add_group[None:name1a:header1kcwrDVlJn:footer1J44]",
   "fullName" : "test.test_add_group#test_add_group",
-  "historyId" : "0b65d3a49f9c9df9d932c0cc7bb3a8e1",
+  "historyId" : "cdeb0e0d3451d87db983ec26b3ad1996",
   "time" : {
-    "start" : 1571303180809,
-    "stop" : 1571303182342,
-    "duration" : 1533
+    "start" : 1571303184117,
+    "stop" : 1571303185678,
+    "duration" : 1561
   },
   "status" : "passed",
   "flaky" : false,
   "newFailed" : false,
   "beforeStages" : [ {
+    "name" : "check_ui",
+    "time" : {
+      "start" : 1571303184116,
+      "stop" : 1571303184116,
+      "duration" : 0
+    },
+    "status" : "passed",
+    "steps" : [ ],
+    "attachments" : [ ],
+    "parameters" : [ ],
+    "stepsCount" : 0,
+    "hasContent" : false,
+    "shouldDisplayMessage" : false,
+    "attachmentsCount" : 0
+  }, {
     "name" : "stop",
     "time" : {
       "start" : 1571303148350,
@@ -22,40 +37,25 @@
     "steps" : [ ],
     "attachments" : [ ],
     "parameters" : [ ],
-    "shouldDisplayMessage" : false,
-    "attachmentsCount" : 0,
+    "stepsCount" : 0,
     "hasContent" : false,
-    "stepsCount" : 0
+    "shouldDisplayMessage" : false,
+    "attachmentsCount" : 0
   }, {
     "name" : "app",
     "time" : {
-      "start" : 1571303180727,
-      "stop" : 1571303180807,
-      "duration" : 80
+      "start" : 1571303184044,
+      "stop" : 1571303184116,
+      "duration" : 72
     },
     "status" : "passed",
     "steps" : [ ],
     "attachments" : [ ],
     "parameters" : [ ],
-    "shouldDisplayMessage" : false,
-    "attachmentsCount" : 0,
+    "stepsCount" : 0,
     "hasContent" : false,
-    "stepsCount" : 0
-  }, {
-    "name" : "check_ui",
-    "time" : {
-      "start" : 1571303180808,
-      "stop" : 1571303180808,
-      "duration" : 0
-    },
-    "status" : "passed",
-    "steps" : [ ],
-    "attachments" : [ ],
-    "parameters" : [ ],
     "shouldDisplayMessage" : false,
-    "attachmentsCount" : 0,
-    "hasContent" : false,
-    "stepsCount" : 0
+    "attachmentsCount" : 0
   }, {
     "name" : "db",
     "time" : {
@@ -67,65 +67,65 @@
     "steps" : [ ],
     "attachments" : [ ],
     "parameters" : [ ],
-    "shouldDisplayMessage" : false,
-    "attachmentsCount" : 0,
+    "stepsCount" : 0,
     "hasContent" : false,
-    "stepsCount" : 0
+    "shouldDisplayMessage" : false,
+    "attachmentsCount" : 0
   } ],
   "testStage" : {
     "status" : "passed",
     "steps" : [ {
       "name" : "Given a group list",
       "time" : {
-        "start" : 1571303180810,
-        "stop" : 1571303180814,
-        "duration" : 4
+        "start" : 1571303184117,
+        "stop" : 1571303184123,
+        "duration" : 6
       },
       "status" : "passed",
       "steps" : [ ],
       "attachments" : [ ],
       "parameters" : [ ],
-      "shouldDisplayMessage" : false,
-      "attachmentsCount" : 0,
+      "stepsCount" : 0,
       "hasContent" : false,
-      "stepsCount" : 0
+      "shouldDisplayMessage" : false,
+      "attachmentsCount" : 0
     }, {
-      "name" : "When I add a group None:name16mwrtEz:header1 f  8Vas3:footer1Ur8kgixWC to the list",
+      "name" : "When I add a group None:name1a:header1kcwrDVlJn:footer1J44 to the list",
       "time" : {
-        "start" : 1571303180814,
-        "stop" : 1571303182334,
-        "duration" : 1520
+        "start" : 1571303184123,
+        "stop" : 1571303185669,
+        "duration" : 1546
       },
       "status" : "passed",
       "steps" : [ ],
       "attachments" : [ ],
       "parameters" : [ ],
-      "shouldDisplayMessage" : false,
-      "attachmentsCount" : 0,
+      "stepsCount" : 0,
       "hasContent" : false,
-      "stepsCount" : 0
+      "shouldDisplayMessage" : false,
+      "attachmentsCount" : 0
     }, {
       "name" : "Then the new group list is equal to the old list with the added group",
       "time" : {
-        "start" : 1571303182334,
-        "stop" : 1571303182342,
-        "duration" : 8
+        "start" : 1571303185669,
+        "stop" : 1571303185678,
+        "duration" : 9
       },
       "status" : "passed",
       "steps" : [ ],
       "attachments" : [ ],
       "parameters" : [ ],
-      "shouldDisplayMessage" : false,
-      "attachmentsCount" : 0,
+      "stepsCount" : 0,
       "hasContent" : false,
-      "stepsCount" : 0
+      "shouldDisplayMessage" : false,
+      "attachmentsCount" : 0
     } ],
     "attachments" : [ ],
     "parameters" : [ ],
-    "shouldDisplayMessage" : false,
-    "attachmentsCount" : 0,
+    "stepsCount" : 3,
     "hasContent" : true,
-    "stepsCount" : 3
+    "shouldDisplayMessage" : false,
+    "attachmentsCount" : 0
   },
   "afterStages" : [ {
     "name" : "stop::fin",
@@ -138,10 +138,10 @@
     "steps" : [ ],
     "attachments" : [ ],
     "parameters" : [ ],
-    "shouldDisplayMessage" : false,
-    "attachmentsCount" : 0,
+    "stepsCount" : 0,
     "hasContent" : false,
-    "stepsCount" : 0
+    "shouldDisplayMessage" : false,
+    "attachmentsCount" : 0
   }, {
     "name" : "db::fin",
     "time" : {
@@ -153,10 +153,10 @@
     "steps" : [ ],
     "attachments" : [ ],
     "parameters" : [ ],
-    "shouldDisplayMessage" : false,
-    "attachmentsCount" : 0,
+    "stepsCount" : 0,
     "hasContent" : false,
-    "stepsCount" : 0
+    "shouldDisplayMessage" : false,
+    "attachmentsCount" : 0
   } ],
   "labels" : [ {
     "name" : "parentSuite",
@@ -185,7 +185,7 @@
   } ],
   "parameters" : [ {
     "name" : "json_groups",
-    "value" : "None:name16mwrtEz:header1 f  8Vas3:footer1Ur8kgixWC"
+    "value" : "None:name1a:header1kcwrDVlJn:footer1J44"
   } ],
   "links" : [ ],
   "hidden" : false,
@@ -193,18 +193,18 @@
   "extra" : {
     "severity" : "normal",
     "retries" : [ {
-      "uid" : "996e7c69eb9319c8",
+      "uid" : "a8f669c8f50bd041",
       "status" : "broken",
       "statusDetails" : "AttributeError: module 'pytest' has no attribute 'allure'",
       "time" : {
-        "start" : 1571222309227,
-        "stop" : 1571222309227,
-        "duration" : 0
+        "start" : 1571222309731,
+        "stop" : 1571222309732,
+        "duration" : 1
       }
     } ],
     "categories" : [ ],
     "tags" : [ ]
   },
-  "source" : "7cc739988031786f.json",
-  "parameterValues" : [ "None:name16mwrtEz:header1 f  8Vas3:footer1Ur8kgixWC" ]
+  "source" : "a76aa3fce4eb4681.json",
+  "parameterValues" : [ "None:name1a:header1kcwrDVlJn:footer1J44" ]
 }

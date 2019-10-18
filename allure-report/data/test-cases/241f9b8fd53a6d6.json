@@ -1,16 +1,16 @@
 {
-  "uid" : "49f1b42c8bd82e41",
-  "name" : "test_add_group[None:name1qWS 31kfB:header1CrjhOVpQ:footer1  ME3 l]",
+  "uid" : "241f9b8fd53a6d6",
+  "name" : "test_add_group[None:name16mwrtEz:header1 f  8Vas3:footer1Ur8kgixWC]",
   "fullName" : "test.test_add_group#test_add_group",
-  "historyId" : "a9e54997124ffcf79d6e406b7a901a5a",
+  "historyId" : "0b65d3a49f9c9df9d932c0cc7bb3a8e1",
   "time" : {
-    "start" : 1571222309481,
-    "stop" : 1571222309482,
-    "duration" : 1
+    "start" : 1571222309227,
+    "stop" : 1571222309227,
+    "duration" : 0
   },
   "status" : "broken",
   "statusMessage" : "AttributeError: module 'pytest' has no attribute 'allure'",
-  "statusTrace" : "app = <fixture.application.Application object at 0x03F320F0>, db = <fixture.db.DbFixture object at 0x03F3EF50>, json_groups = None:name1qWS 31kfB:header1CrjhOVpQ:footer1  ME3 l\ncheck_ui = False\n\n    def test_add_group(app, db, json_groups, check_ui):\n        group = json_groups\n>       with pytest.allure.step('Given a group list'):\nE       AttributeError: module 'pytest' has no attribute 'allure'\n\ntest\\test_add_group.py:8: AttributeError",
+  "statusTrace" : "app = <fixture.application.Application object at 0x03F320F0>, db = <fixture.db.DbFixture object at 0x03F3EF50>, json_groups = None:name16mwrtEz:header1 f  8Vas3:footer1Ur8kgixWC\ncheck_ui = False\n\n    def test_add_group(app, db, json_groups, check_ui):\n        group = json_groups\n>       with pytest.allure.step('Given a group list'):\nE       AttributeError: module 'pytest' has no attribute 'allure'\n\ntest\\test_add_group.py:8: AttributeError",
   "flaky" : false,
   "newFailed" : false,
   "beforeStages" : [ {
@@ -24,40 +24,40 @@
     "steps" : [ ],
     "attachments" : [ ],
     "parameters" : [ ],
-    "shouldDisplayMessage" : false,
-    "attachmentsCount" : 0,
+    "stepsCount" : 0,
     "hasContent" : false,
-    "stepsCount" : 0
+    "shouldDisplayMessage" : false,
+    "attachmentsCount" : 0
+  }, {
+    "name" : "app",
+    "time" : {
+      "start" : 1571222308997,
+      "stop" : 1571222309225,
+      "duration" : 228
+    },
+    "status" : "passed",
+    "steps" : [ ],
+    "attachments" : [ ],
+    "parameters" : [ ],
+    "stepsCount" : 0,
+    "hasContent" : false,
+    "shouldDisplayMessage" : false,
+    "attachmentsCount" : 0
   }, {
     "name" : "check_ui",
     "time" : {
-      "start" : 1571222309480,
-      "stop" : 1571222309480,
+      "start" : 1571222309225,
+      "stop" : 1571222309225,
       "duration" : 0
     },
     "status" : "passed",
     "steps" : [ ],
     "attachments" : [ ],
     "parameters" : [ ],
-    "shouldDisplayMessage" : false,
-    "attachmentsCount" : 0,
+    "stepsCount" : 0,
     "hasContent" : false,
-    "stepsCount" : 0
-  }, {
-    "name" : "app",
-    "time" : {
-      "start" : 1571222309246,
-      "stop" : 1571222309480,
-      "duration" : 234
-    },
-    "status" : "passed",
-    "steps" : [ ],
-    "attachments" : [ ],
-    "parameters" : [ ],
     "shouldDisplayMessage" : false,
-    "attachmentsCount" : 0,
-    "hasContent" : false,
-    "stepsCount" : 0
+    "attachmentsCount" : 0
   }, {
     "name" : "db",
     "time" : {
@@ -69,10 +69,10 @@
     "steps" : [ ],
     "attachments" : [ ],
     "parameters" : [ ],
-    "shouldDisplayMessage" : false,
-    "attachmentsCount" : 0,
+    "stepsCount" : 0,
     "hasContent" : false,
-    "stepsCount" : 0
+    "shouldDisplayMessage" : false,
+    "attachmentsCount" : 0
   } ],
   "afterStages" : [ {
     "name" : "stop::fin",
@@ -85,10 +85,10 @@
     "steps" : [ ],
     "attachments" : [ ],
     "parameters" : [ ],
-    "shouldDisplayMessage" : false,
-    "attachmentsCount" : 0,
+    "stepsCount" : 0,
     "hasContent" : false,
-    "stepsCount" : 0
+    "shouldDisplayMessage" : false,
+    "attachmentsCount" : 0
   }, {
     "name" : "db::fin",
     "time" : {
@@ -100,10 +100,10 @@
     "steps" : [ ],
     "attachments" : [ ],
     "parameters" : [ ],
-    "shouldDisplayMessage" : false,
-    "attachmentsCount" : 0,
+    "stepsCount" : 0,
     "hasContent" : false,
-    "stepsCount" : 0
+    "shouldDisplayMessage" : false,
+    "attachmentsCount" : 0
   } ],
   "labels" : [ {
     "name" : "parentSuite",
@@ -132,7 +132,7 @@
   } ],
   "parameters" : [ {
     "name" : "json_groups",
-    "value" : "None:name1qWS 31kfB:header1CrjhOVpQ:footer1  ME3 l"
+    "value" : "None:name16mwrtEz:header1 f  8Vas3:footer1Ur8kgixWC"
   } ],
   "links" : [ ],
   "hidden" : true,
@@ -141,6 +141,6 @@
     "categories" : [ ],
     "tags" : [ ]
   },
-  "source" : "49f1b42c8bd82e41.json",
-  "parameterValues" : [ "None:name1qWS 31kfB:header1CrjhOVpQ:footer1  ME3 l" ]
+  "source" : "241f9b8fd53a6d6.json",
+  "parameterValues" : [ "None:name16mwrtEz:header1 f  8Vas3:footer1Ur8kgixWC" ]
 }

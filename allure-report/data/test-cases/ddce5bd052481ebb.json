@@ -1,5 +1,5 @@
 {
-  "uid" : "dd688189c6e0b73f",
+  "uid" : "ddce5bd052481ebb",
   "name" : "test_add_group[None:name1qWS 31kfB:header1CrjhOVpQ:footer1  ME3 l]",
   "fullName" : "test.test_add_group#test_add_group",
   "historyId" : "a9e54997124ffcf79d6e406b7a901a5a",
@@ -22,10 +22,10 @@
     "steps" : [ ],
     "attachments" : [ ],
     "parameters" : [ ],
-    "shouldDisplayMessage" : false,
-    "attachmentsCount" : 0,
+    "stepsCount" : 0,
     "hasContent" : false,
-    "stepsCount" : 0
+    "shouldDisplayMessage" : false,
+    "attachmentsCount" : 0
   }, {
     "name" : "db",
     "time" : {
@@ -37,10 +37,10 @@
     "steps" : [ ],
     "attachments" : [ ],
     "parameters" : [ ],
-    "shouldDisplayMessage" : false,
-    "attachmentsCount" : 0,
+    "stepsCount" : 0,
     "hasContent" : false,
-    "stepsCount" : 0
+    "shouldDisplayMessage" : false,
+    "attachmentsCount" : 0
   }, {
     "name" : "app",
     "time" : {
@@ -52,10 +52,10 @@
     "steps" : [ ],
     "attachments" : [ ],
     "parameters" : [ ],
-    "shouldDisplayMessage" : false,
-    "attachmentsCount" : 0,
+    "stepsCount" : 0,
     "hasContent" : false,
-    "stepsCount" : 0
+    "shouldDisplayMessage" : false,
+    "attachmentsCount" : 0
   }, {
     "name" : "check_ui",
     "time" : {
@@ -67,10 +67,10 @@
     "steps" : [ ],
     "attachments" : [ ],
     "parameters" : [ ],
-    "shouldDisplayMessage" : false,
-    "attachmentsCount" : 0,
+    "stepsCount" : 0,
     "hasContent" : false,
-    "stepsCount" : 0
+    "shouldDisplayMessage" : false,
+    "attachmentsCount" : 0
   } ],
   "testStage" : {
     "status" : "passed",
@@ -85,10 +85,10 @@
       "steps" : [ ],
       "attachments" : [ ],
       "parameters" : [ ],
-      "shouldDisplayMessage" : false,
-      "attachmentsCount" : 0,
+      "stepsCount" : 0,
       "hasContent" : false,
-      "stepsCount" : 0
+      "shouldDisplayMessage" : false,
+      "attachmentsCount" : 0
     }, {
       "name" : "When I add a group None:name1qWS 31kfB:header1CrjhOVpQ:footer1  ME3 l to the list",
       "time" : {
@@ -100,10 +100,10 @@
       "steps" : [ ],
       "attachments" : [ ],
       "parameters" : [ ],
-      "shouldDisplayMessage" : false,
-      "attachmentsCount" : 0,
+      "stepsCount" : 0,
       "hasContent" : false,
-      "stepsCount" : 0
+      "shouldDisplayMessage" : false,
+      "attachmentsCount" : 0
     }, {
       "name" : "Then the new group list is equal to the old list with the added group",
       "time" : {
@@ -115,17 +115,17 @@
       "steps" : [ ],
       "attachments" : [ ],
       "parameters" : [ ],
-      "shouldDisplayMessage" : false,
-      "attachmentsCount" : 0,
+      "stepsCount" : 0,
       "hasContent" : false,
-      "stepsCount" : 0
+      "shouldDisplayMessage" : false,
+      "attachmentsCount" : 0
     } ],
     "attachments" : [ ],
     "parameters" : [ ],
-    "shouldDisplayMessage" : false,
-    "attachmentsCount" : 0,
+    "stepsCount" : 3,
     "hasContent" : true,
-    "stepsCount" : 3
+    "shouldDisplayMessage" : false,
+    "attachmentsCount" : 0
   },
   "afterStages" : [ {
     "name" : "stop::fin",
@@ -138,10 +138,10 @@
     "steps" : [ ],
     "attachments" : [ ],
     "parameters" : [ ],
-    "shouldDisplayMessage" : false,
-    "attachmentsCount" : 0,
+    "stepsCount" : 0,
     "hasContent" : false,
-    "stepsCount" : 0
+    "shouldDisplayMessage" : false,
+    "attachmentsCount" : 0
   }, {
     "name" : "db::fin",
     "time" : {
@@ -153,10 +153,10 @@
     "steps" : [ ],
     "attachments" : [ ],
     "parameters" : [ ],
-    "shouldDisplayMessage" : false,
-    "attachmentsCount" : 0,
+    "stepsCount" : 0,
     "hasContent" : false,
-    "stepsCount" : 0
+    "shouldDisplayMessage" : false,
+    "attachmentsCount" : 0
   } ],
   "labels" : [ {
     "name" : "parentSuite",
@@ -193,7 +193,7 @@
   "extra" : {
     "severity" : "normal",
     "retries" : [ {
-      "uid" : "49f1b42c8bd82e41",
+      "uid" : "1f0bd399865bfd9c",
       "status" : "broken",
       "statusDetails" : "AttributeError: module 'pytest' has no attribute 'allure'",
       "time" : {
@@ -205,6 +205,6 @@
     "categories" : [ ],
     "tags" : [ ]
   },
-  "source" : "dd688189c6e0b73f.json",
+  "source" : "ddce5bd052481ebb.json",
   "parameterValues" : [ "None:name1qWS 31kfB:header1CrjhOVpQ:footer1  ME3 l" ]
 }

@@ -1,5 +1,5 @@
 {
-  "uid" : "17868c2c1acf5c40",
+  "uid" : "ca0005fa06bbcac2",
   "name" : "test_add_group[None:name1hkL :header1MvUsp 4cK:footer1KvA]",
   "fullName" : "test.test_add_group#test_add_group",
   "historyId" : "d598afe6d1acf12cca687ec76502ed1c",
@@ -24,10 +24,10 @@
     "steps" : [ ],
     "attachments" : [ ],
     "parameters" : [ ],
-    "shouldDisplayMessage" : false,
-    "attachmentsCount" : 0,
+    "stepsCount" : 0,
     "hasContent" : false,
-    "stepsCount" : 0
+    "shouldDisplayMessage" : false,
+    "attachmentsCount" : 0
   }, {
     "name" : "app",
     "time" : {
@@ -39,10 +39,10 @@
     "steps" : [ ],
     "attachments" : [ ],
     "parameters" : [ ],
-    "shouldDisplayMessage" : false,
-    "attachmentsCount" : 0,
+    "stepsCount" : 0,
     "hasContent" : false,
-    "stepsCount" : 0
+    "shouldDisplayMessage" : false,
+    "attachmentsCount" : 0
   }, {
     "name" : "check_ui",
     "time" : {
@@ -54,10 +54,10 @@
     "steps" : [ ],
     "attachments" : [ ],
     "parameters" : [ ],
-    "shouldDisplayMessage" : false,
-    "attachmentsCount" : 0,
+    "stepsCount" : 0,
     "hasContent" : false,
-    "stepsCount" : 0
+    "shouldDisplayMessage" : false,
+    "attachmentsCount" : 0
   }, {
     "name" : "db",
     "time" : {
@@ -69,10 +69,10 @@
     "steps" : [ ],
     "attachments" : [ ],
     "parameters" : [ ],
-    "shouldDisplayMessage" : false,
-    "attachmentsCount" : 0,
+    "stepsCount" : 0,
     "hasContent" : false,
-    "stepsCount" : 0
+    "shouldDisplayMessage" : false,
+    "attachmentsCount" : 0
   } ],
   "afterStages" : [ {
     "name" : "stop::fin",
@@ -85,10 +85,10 @@
     "steps" : [ ],
     "attachments" : [ ],
     "parameters" : [ ],
-    "shouldDisplayMessage" : false,
-    "attachmentsCount" : 0,
+    "stepsCount" : 0,
     "hasContent" : false,
-    "stepsCount" : 0
+    "shouldDisplayMessage" : false,
+    "attachmentsCount" : 0
   }, {
     "name" : "db::fin",
     "time" : {
@@ -100,10 +100,10 @@
     "steps" : [ ],
     "attachments" : [ ],
     "parameters" : [ ],
-    "shouldDisplayMessage" : false,
-    "attachmentsCount" : 0,
+    "stepsCount" : 0,
     "hasContent" : false,
-    "stepsCount" : 0
+    "shouldDisplayMessage" : false,
+    "attachmentsCount" : 0
   } ],
   "labels" : [ {
     "name" : "parentSuite",
@@ -141,6 +141,6 @@
     "categories" : [ ],
     "tags" : [ ]
   },
-  "source" : "17868c2c1acf5c40.json",
+  "source" : "ca0005fa06bbcac2.json",
   "parameterValues" : [ "None:name1hkL :header1MvUsp 4cK:footer1KvA" ]
 }
