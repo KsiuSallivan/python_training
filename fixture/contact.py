@@ -1,6 +1,4 @@
 from model.contact import Contact
-from model.group import Group
-import re
 
 
 class ContactHelper:
@@ -27,6 +25,7 @@ class ContactHelper:
     def select_contact_by_id(self, id):
         wd = self.app.wd
         wd.find_element_by_css_selector("input[value='%s']" % id).click()
+        # wd.find_element_by_id("%s" % id).click()
 
     def select_first_contact(self):
         self.select_contact_by_index(0)
@@ -154,23 +153,23 @@ class ContactHelper:
                        secondaryphone=secondaryphone, address=address,
                        email=email, email2=email2, email3=email3)
 
-    def add_contact_to_group(self, id):
+    def add_contact_to_group(self, contact_id, group_id):
         wd = self.app.wd
         self.app.open_home_page()
-        self.select_contact_by_id(id)
+        self.select_contact_by_id(contact_id)
         wd.find_element_by_name("to_group").click()
-        wd.find_element_by_css_selector("option[value='%s']" % id).click()
+        wd.find_element_by_css_selector("option[value='%s']" % group_id).click()
         wd.find_element_by_name("add").click()
         self.app.open_home_page()
         wd.find_element_by_name("group").click()
         wd.find_element_by_css_selector("option[value]").click()
 
-    def del_contact_from_group(self, id):
+    def del_contact_from_group(self, contact_id, group_id):
         wd = self.app.wd
         self.app.open_home_page()
         wd.find_element_by_name("group").click()
-        wd.find_element_by_css_selector("option[value='%s']" % id).click()
-        self.select_contact_by_id(id)
+        wd.find_element_by_css_selector("option[value='%s']" % group_id).click()
+        self.select_contact_by_id(contact_id)
         wd.find_element_by_css_selector("input[name='remove']").click()
         self.app.open_home_page()
         wd.find_element_by_name("group").click()
