@@ -158,7 +158,7 @@ class ContactHelper:
         self.app.open_home_page()
         self.select_contact_by_id(contact_id)
         wd.find_element_by_name("to_group").click()
-        wd.find_element_by_css_selector("option[value='%s']" % group_id).click()
+        wd.find_element_by_xpath("(//option[@value='%s'])[2]" % group_id).click()
         wd.find_element_by_name("add").click()
         self.app.open_home_page()
         wd.find_element_by_name("group").click()
