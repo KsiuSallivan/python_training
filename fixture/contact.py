@@ -175,6 +175,23 @@ class ContactHelper:
         wd.find_element_by_name("group").click()
         wd.find_element_by_css_selector("option[value]").click()
 
+    def see_group_content(self, group_id):
+        wd = self.app.wd
+        self.app.open_home_page()
+        wd.find_element_by_xpath("(//option[@value='%s'])" % group_id).click()
+        self.contact_cache = []
+        for row in wd.find_elements_by_name("entry"):
+            cells = row.find_elements_by_tag_name("td")
+            id = cells[0].find_element_by_tag_name("input").get_attribute("value")
+            firstname = cells[2].text
+            lastname = cells[1].text
+            address = cells[3].text
+            all_emails = cells[4].text
+            all_phones = cells[5].text
+            self.contact_cache.append(Contact(id=id, firstname=firstname, lastname=lastname, address=address,
+                                              all_emails_from_home_page=all_emails,
+                                              all_phones_from_home_page=all_phones))
+        return list(self.contact_cache)
 
     # def get_contact_info_from_view_page(self, index):
     #     wd = self.app.wd

@@ -2,7 +2,6 @@ from pony.orm import *
 from datetime import datetime
 from model.group import Group
 from model.contact import Contact
-from pymysql.converters import decoders
 
 
 class ORMFixture:
@@ -15,7 +14,7 @@ class ORMFixture:
         name = Optional(str, column='group_name')
         header = Optional(str, column='group_header')
         footer = Optional(str, column='group_footer')
-        contacts = Set(lambda: ORMFixture.ORMContact, table='address_in_groups', column="id", reverse="groups",
+        contacts = Set(lambda: ORMFixture.ORMContact, table="address_in_groups", column="id", reverse="groups",
                        lazy=True)
 
     class ORMContact(db.Entity):
@@ -24,11 +23,11 @@ class ORMFixture:
         firstname = Optional(str, column='firstname')
         lastname = Optional(str, column='lastname')
         deprecated = Optional(datetime, column='deprecated')
-        groups = Set(lambda: ORMFixture.ORMGroup, table='address_in_groups', column="group_id", reverse="contacts",
+        groups = Set(lambda: ORMFixture.ORMGroup, table="address_in_groups", column="group_id", reverse="contacts",
                      lazy=True)
 
     def __init__(self, host, name, user, password):
-        self.db.bind('mysql', host=host, database=name, user=user, password=password, conv=decoders)
+        self.db.bind('mysql', host=host, database=name, user=user, password=password)
         self.db.generate_mapping()
         sql_debug(True)
 
