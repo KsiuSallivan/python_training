@@ -36,7 +36,5 @@ def test_add_contact_to_group(app, db):
     # сверяем списки
     # assert old_group_content == sorted(new_group_content)
 
-    # проверки - из дб и орм
-    # старый список контактов в группе и получить новый список контактов в группе
 
 

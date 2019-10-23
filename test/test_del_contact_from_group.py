@@ -1,6 +1,7 @@
 from model.contact import Contact
 from model.group import Group
 from fixture.orm import ORMFixture
+import random
 
 # Для второго теста надо проверять, что существуют контакты, которые можно удалить из группы (и добавлять контакт в
 # группу если все контакты удалены из всех групп).
@@ -14,6 +15,19 @@ def test_del_contact_from_group(app, db):
         app.contact.create_contact(Contact(firstname="Kseniya", email="ksiu.sallivan@gmail.com", homephone="234234234"))
     if len(db.get_group_list()) == 0:
         app.group.create_group(Group(name="147", header="555", footer="666"))
-    # app.contact.add_contact_to_group(id)
-    app.contact.del_contact_from_group(242, 202)
+    # выбираем группу и контакт из нее, который надо удалить
+    # добавляем контакт в группу, если его нет
+    # group = random.choice(db.get_group_list())
+    # contact = orm.get_contacts_in_group(Group(id='%s' % group.id))[0]
+    # try:
+    #     if len(orm.get_contacts_in_group(Group(id='%s' % group.id))) == 0:
+    #         app.contact.add_contact_to_group(app.contact.add_contact_to_group(contact.id, group.id))
+    # except:
+    #     pass
+
+    # удаляем контакт
+    # app.contact.del_contact_from_group(contact.id, group.id)
+    app.contact.del_contact_from_group(256, 229)
+    # добавляем проверки
+
 
