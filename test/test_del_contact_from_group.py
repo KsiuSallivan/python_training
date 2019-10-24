@@ -3,9 +3,6 @@ from model.group import Group
 from fixture.orm import ORMFixture
 import random
 
-# Для второго теста надо проверять, что существуют контакты, которые можно удалить из группы (и добавлять контакт в
-# группу если все контакты удалены из всех групп).
-
 orm = ORMFixture(host="127.0.0.1", name="addressbook", user="root", password="")
 
 
