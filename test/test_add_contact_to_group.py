@@ -16,7 +16,6 @@ def test_add_contact_to_group(app, db):
     # проверяем во взятой группе, что есть контакты, которые в нее не входят, добавляем новый в случае чего,
     # сохраняем список контактов взятой группы и берем первый элемент
     group = random.choice(db.get_group_list())
-    # print(group)
     # old_group_content = orm.get_contacts_in_group(Group(id='%s' % group.id))
     # print(old_group_content)
     try:
@@ -25,7 +24,6 @@ def test_add_contact_to_group(app, db):
     except:
         pass
     contact = orm.get_contacts_not_in_group(Group(id='%s' % group.id))[0]
-    # print(contact)
     # засовываем полученный контакт в полученную группу, обновляем список контактов в группе
     # и генерим новый список контактов
     app.contact.add_contact_to_group(contact.id, group.id)
