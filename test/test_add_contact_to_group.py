@@ -16,7 +16,6 @@ def test_add_contact_to_group(app, db):
     # сохраняем список контактов взятой группы и берем первый элемент
     group = random.choice(db.get_group_list())
     old_group_content = orm.get_contacts_in_group(Group(id='%s' % group.id))
-    print(old_group_content)
     try:
         if len(orm.get_contacts_not_in_group(Group(id='%s' % group.id))) == 0:
             app.contact.create_contact(Contact(firstname="Kseniya", email="ksiu.sallivan@gmail.com", homephone="234234234"))
@@ -27,9 +26,7 @@ def test_add_contact_to_group(app, db):
     # и генерим новый список контактов
     app.contact.add_contact_to_group(contact.id, group.id)
     old_group_content.append(contact)
-    print(old_group_content)
     new_group_content = app.contact.see_group_content(group.id)
-    print(new_group_content)
     # сверяем списки
     assert sorted(old_group_content, key=Contact.id_or_max) == sorted(new_group_content, key=Contact.id_or_max)
 

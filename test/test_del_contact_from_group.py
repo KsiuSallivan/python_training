@@ -20,9 +20,13 @@ def test_del_contact_from_group(app, db):
         contact = orm.get_contacts_not_in_group(Group(id='%s' % group.id))[0]
         app.contact.add_contact_to_group(app.contact.add_contact_to_group(contact.id, group.id))
     contact = orm.get_contacts_in_group(Group(id='%s' % group.id))[0]
+    # генерим список контактов в группе
+    old_group_content = orm.get_contacts_in_group(Group(id='%s' % group.id))
     # удаляем контакт
     app.contact.del_contact_from_group(contact.id, group.id)
-    # app.contact.del_contact_from_group(256, 229)
-    # добавляем проверки
-
+    # обновляем список контактов в группе и генерим новый список контактов
+    old_group_content.remove(contact)
+    new_group_content = app.contact.see_group_content(group.id)
+    # сверяем списки
+    assert sorted(old_group_content, key=Contact.id_or_max) == sorted(new_group_content, key=Contact.id_or_max)
 
