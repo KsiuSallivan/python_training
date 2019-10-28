@@ -42,3 +42,44 @@ class DbFixture:
 
     def destroy(self):
         self.connection.close()
+
+    def contacts_with_group(self):
+        list_c_with_g = []
+        cursor = self.connection.cursor()
+        try:
+            cursor.execute("select id, group_id from address_in_groups where deprecated='0000-00-00 00:00:00'")
+            for row in cursor:
+                (id, group_id) = row
+                list_c_with_g.append(Contact(id=str(id)))
+        finally:
+            cursor.close()
+        return list_c_with_g
+
+    def contacts_id_without_group(self):
+        list_all = self.get_contact_list()
+        list_c_with_g = self.contacts_with_group()
+        list_c_without_g = []
+        for c in list_all:
+            found = False
+            for c_g in list_c_with_g:
+                if c.id == c_g.id:
+                    found = True
+            if not found:
+                list_c_without_g.append(Contact(id=c.id, firstname=c.firstname))
+        return list_c_without_g
+
+    def groups_with_contacts(self):
+        list_g_with_c = []
+        cursor = self.connection.cursor()
+        try:
+            cursor.execute("select id, group_id from address_in_groups where deprecated='0000-00-00 00:00:00'")
+            for row in cursor:
+                (id, group_id) = row
+                list_c_with_g.append(Contact(id=str(id)))
+        finally:
+            cursor.close()
+        return list_c_with_g
+
+
+
+
