@@ -1,6 +1,9 @@
 import pymysql
 from model.group import Group
 from model.contact import Contact
+from fixture.orm import ORMFixture
+
+orm = ORMFixture(host="127.0.0.1", name="addressbook", user="root", password="")
 
 
 class DbFixture:
@@ -72,14 +75,10 @@ class DbFixture:
         list_g_with_c = []
         cursor = self.connection.cursor()
         try:
-            cursor.execute("select id, group_id from address_in_groups where deprecated='0000-00-00 00:00:00'")
+            cursor.execute("select group_id from address_in_groups where deprecated='0000-00-00 00:00:00'")
             for row in cursor:
-                (id, group_id) = row
-                list_c_with_g.append(Contact(id=str(id)))
+                (group_id) = row
+                list_g_with_c.append(Group(id=group_id))
         finally:
             cursor.close()
-        return list_c_with_g
-
-
-
-
+        return list_g_with_c
