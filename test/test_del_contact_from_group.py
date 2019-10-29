@@ -13,11 +13,11 @@ def test_del_contact_from_group(app, db):
         app.group.create_group(Group(name="147", header="555", footer="666"))
     if len(db.groups_with_contacts()) == 0:
         app.group.create_group(Group(name="147", header="555", footer="666"))
+    # выбираем контакт и группу
     group = db.groups_with_contacts()[0]
     contact = orm.get_contacts_in_group(Group(id='%s' % group.id))[0]
     # генерим список контактов в группе
     old_group_content = orm.get_contacts_in_group(Group(id='%s' % group.id))
-    print(old_group_content)
     # удаляем контакт
     app.contact.del_contact_from_group(contact.id, group.id)
     # обновляем список контактов в группе и генерим новый список контактов
