@@ -1,9 +1,6 @@
 import pymysql
 from model.group import Group
 from model.contact import Contact
-from fixture.orm import ORMFixture
-
-orm = ORMFixture(host="127.0.0.1", name="addressbook", user="root", password="")
 
 
 class DbFixture:
