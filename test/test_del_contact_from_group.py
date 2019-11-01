@@ -11,9 +11,11 @@ def test_del_contact_from_group(app, db):
         app.contact.create_contact(Contact(firstname="Kseniya", email="ksiu.sallivan@gmail.com", homephone="234234234"))
     if len(db.get_group_list()) == 0:
         app.group.create_group(Group(name="147", header="555", footer="666"))
+    # пробуем выбрать контакт и группу, либо создаем
     if len(db.groups_with_contacts()) == 0:
-        app.group.create_group(Group(name="147", header="555", footer="666"))
-    # выбираем контакт и группу
+        group = db.groups_with_contacts()[0]
+        contact = orm.get_contacts_in_group(Group(id='%s' % group.id))[0]
+        app.contact.add_contact_to_group(contact.id, group.id)
     group = db.groups_with_contacts()[0]
     contact = orm.get_contacts_in_group(Group(id='%s' % group.id))[0]
     # генерим список контактов в группе
