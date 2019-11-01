@@ -1,6 +1,7 @@
 from model.contact import Contact
 from model.group import Group
 from fixture.orm import ORMFixture
+from random import random
 
 orm = ORMFixture(host="127.0.0.1", name="addressbook", user="root", password="")
 
@@ -11,11 +12,11 @@ def test_del_contact_from_group(app, db):
         app.contact.create_contact(Contact(firstname="Kseniya", email="ksiu.sallivan@gmail.com", homephone="234234234"))
     if len(db.get_group_list()) == 0:
         app.group.create_group(Group(name="147", header="555", footer="666"))
-    # пробуем выбрать контакт и группу, либо создаем
+    # добавляем контакт в группу, если его нет
     if len(db.groups_with_contacts()) == 0:
-        group = db.groups_with_contacts()[0]
-        contact = orm.get_contacts_in_group(Group(id='%s' % group.id))[0]
-        app.contact.add_contact_to_group(contact.id, group.id)
+        group_free = random.choice(db.get_group_list())
+        contact_free = random.choice(db.get_contact_list())
+        app.contact.add_contact_to_group(contact_free.id, group_free.id)
     group = db.groups_with_contacts()[0]
     contact = orm.get_contacts_in_group(Group(id='%s' % group.id))[0]
     # генерим список контактов в группе
